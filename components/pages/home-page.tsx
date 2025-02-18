@@ -29,7 +29,6 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 
-
 const formSchema = z
   .object({
     flashcards: z.string().min(1, "Please enter your flashcards"),
@@ -139,8 +138,6 @@ export default function HomePage() {
     if (navigator.share && navigator.canShare?.({ url })) {
       try {
         await navigator.share({
-          title: "Quizlet to Anki Converter",
-          text: "Convert your Quizlet flashcards to Anki format easily!",
           url,
         });
       } catch (error) {
