@@ -134,8 +134,9 @@ export default function HomePage() {
   const shareApp = async () => {
     const url = window.location.href;
 
-    // Check if Web Share API is supported and can share
-    if (navigator.share && navigator.canShare?.({ url })) {
+    const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+    if (isMobile && navigator.share && navigator.canShare?.({ url })) {
       try {
         await navigator.share({
           url,
@@ -155,7 +156,7 @@ export default function HomePage() {
         });
       }
     } else {
-      // Fallback for browsers without Web Share API
+      // Fallback for non-mobile devices or browsers without Web Share API
       await navigator.clipboard.writeText(url);
       toast("Link copied to clipboard", {
         description: "You can now share it with your friends!",
