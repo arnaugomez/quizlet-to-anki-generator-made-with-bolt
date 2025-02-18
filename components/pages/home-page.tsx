@@ -139,6 +139,8 @@ export default function HomePage() {
     if (isMobile && navigator.share && navigator.canShare?.({ url })) {
       try {
         await navigator.share({
+          title: "Quizlet to Anki Converter",
+          text: "Convert your Quizlet flashcards to Anki format in seconds",
           url,
         });
       } catch (error) {
