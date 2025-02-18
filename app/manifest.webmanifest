@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Quizlet to Anki Converter - Convert Flashcards Easily",
+  "short_name": "Quizlet to Anki",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
